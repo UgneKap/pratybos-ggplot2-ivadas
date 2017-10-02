@@ -61,7 +61,7 @@ position = "dodge"
 ----------------------------------------------------------------------------- 
 ```{r}
 ggplot(data = diamonds) + 
-  geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
+  geom_bar(mapping = aes(x = cut, fill = clarity), color = "black", position = "dodge")
 ```
 
 position = "jitter"
@@ -76,8 +76,9 @@ ggplot(data = mpg) +
 Su `"jitter"`
 ```{r}
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy), position = "jitter")
+  geom_point(mapping = aes(x = displ, y = hwy), alpha = 0.33, position = "jitter")
 ```
+
 
 geom_point(position = "jitter") vs. geom_jitter()
 ----------------------------------------------------------------------------- 
@@ -114,18 +115,23 @@ Užduotys: pozicijos korekcijos
 1. Kaip galėtumėte patobulinti šitą grafiką, kad jis suteiktų daugiau informacijos (naudokite pozicijos korekcijas)?
 ```{r}
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_point()
+  geom_point(alpha = 0.5, position = "jitter")
 ```
 
 2. Kokie funkcijos `geom_jitter()` parametrai kontroliuoja taškų sklaidymo stiprumą?
+width ir height
 
 3. Palyginkite funkcijas `geom_count()` ir `geom_jitter()`. Kuo jos panašios ir kuo skiriasi?
+Abu išvesti iš geom_point. Jitter - pozicija išsklaidyta, count - ne
+geom_count() - skaičiuoja kiekvienos pozicijos skaičių. Gerai, kai yra diskretūs duomenys ar duomenys persidengia.
+geom_jitter() - kiekviename taške yra šiek tiek atsitiktinės variacijos. Turi statistinę transformaciją
 
 4. Kokią pagrindinę pozicijos korekciją naudoja funkcija `geom_boxplot()`. Pademonstruokite tai vizualizuodami duomenų lentelės `mpg` kintamuosius.
 
 ```{r}
-ggplot(mpg) + 
-    geom_boxplot(___)
+View(mpg)
+ggplot(mpg, mapping = aes(x = class, y = displ)) + 
+    geom_boxplot(position = "dodge")
 ```
 
 

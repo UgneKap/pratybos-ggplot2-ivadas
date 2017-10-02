@@ -155,6 +155,7 @@ r + theme_void()
 r + theme_dark()
 r + theme_gray()
 r + theme_bw()
+
 ```
 
 
@@ -212,7 +213,11 @@ Užduotys: temos elementai
 ----------------------------------------------------------------------------- 
 
 1. Ką daro funkcija `labs()`? Peržiūrėkite dokumentaciją ir išbandykite pavyzdžius.
+galima pridėti grafiko aprašymus
+
 2. Ką daro funkcija `theme()`? Peržiūrėkite dokumentaciją ir išbandykite pavyzdžius, kuriuose naudojamas objektas `p1`.
+pakeičia grafiko temą
+
 3. Ką daro funkcija `theme_set()`? Peržiūrėkite dokumentaciją ir išbandykite pavyzdžius.
 4. Ką atlieka funkcijos `labs()` parametrai `x`, `y`, `title`, `subtitle`, `caption`. Išbandykite kiekvieną atskirai.
 
